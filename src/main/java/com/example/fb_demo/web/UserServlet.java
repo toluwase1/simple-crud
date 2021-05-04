@@ -3,6 +3,7 @@ package com.example.fb_demo.web;
 import com.example.fb_demo.dao.UserDAO;
 import com.example.fb_demo.model.User;
 
+import javax.inject.Inject;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -13,11 +14,13 @@ import java.util.List;
 @WebServlet("/")
 public class UserServlet extends HttpServlet {
     private static final long serialVersionUID =1L;
+
+    @Inject
     private UserDAO userDAO;
 
-    public UserServlet() {
-        this.userDAO = new UserDAO();
-    }
+//    public UserServlet() {
+//        this.userDAO = new UserDAO();
+//    }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
